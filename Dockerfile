@@ -13,6 +13,7 @@ RUN ruby -v && gem install bundler jekyll &&\
     bundle config --local build.sassc --disable-march-tune-native &&\
     bundle install
 
-EXPOSE 4000
+#EXPOSE 4000
 
-ENTRYPOINT bundle exec jekyll serve --host 0.0.0.0
+#ENTRYPOINT bundle exec jekyll serve --host 0.0.0.0
+ENTRYPOINT bundle exec jekyll build
