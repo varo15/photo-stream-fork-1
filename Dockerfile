@@ -17,3 +17,8 @@ RUN ruby -v && gem install bundler jekyll &&\
 
 #ENTRYPOINT bundle exec jekyll serve --host 0.0.0.0
 ENTRYPOINT bundle exec jekyll build
+
+FROM nginx:alpine
+COPY /photo-stream/_site /usr/share/nginx/html/index.html
+
+EXPOSE 8080
